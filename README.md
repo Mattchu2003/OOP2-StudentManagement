@@ -10,76 +10,13 @@ Prince C. Cajocson
 Description: Library Management System using OOP principles.
 
 **Class Diagram**
-
-classDiagram
-    class Book {
-        - bookID : String
-        - title : String
-        - author : String
-        - ISBN : String
-        - isAvailable : boolean
-        + getBookInfo() String
-        + checkAvailability() boolean
-        + borrowBook() void
-        + returnBook() void
-    }
-
-    class Member {
-        - memberID : String
-        - name : String
-        - email : String
-        - phoneNumber : String
-        + registerMember() void
-        + updateInfo() void
-        + viewBorrowedBooks() List
-        + borrowBook(Book) boolean
-        + returnBook(Book) void
-    }
-
-    class Librarian {
-        - employeeID : String
-        - name : String
-        - department : String
-        + addBook(Book) void
-        + removeBook(String) void
-        + searchBook(String) Book
-        + issueBook(Member, Book) void
-        + acceptReturn(Member, Book) void
-    }
-
-    Member "1" --> "1..*" Book : borrows
-
-    Notation: + = public, - = private. Arrows show associations/relationships.
+<img width="797" height="854" alt="ClassDiagram" src="https://github.com/user-attachments/assets/ad794433-bc4a-4c25-a3d1-8c1dc6635d53" />
 
 
 
-   ** Use-Case Diagram**
 
-   graph LR
-    Member(["Member"])
-    Librarian(["Librarian"])
 
-    subgraph LibrarySystem["Library System"]
-        UC1(["Search Book"])
-        UC2(["Borrow Book"])
-        UC3(["Return Book"])
-        UC4(["View Account"])
-        UC5(["Add Book"])
-        UC6(["Remove Book"])
-        UC7(["Issue Book"])
-        UC8(["Generate Report"])
-    end
+** Use-Case Diagram**
+<img width="801" height="876" alt="UseCase_Driagram" src="https://github.com/user-attachments/assets/9f74aea7-013e-4fbc-a7d4-09bea2dac1f2" />
 
-    Member --- UC1
-    Member --- UC2
-    Member --- UC3
-    Member --- UC4
-
-    Librarian --- UC5
-    Librarian --- UC6
-    Librarian --- UC7
-    Librarian --- UC8
-    Librarian --- UC3
-    Librarian --- UC4
-
-    Notation: Stick figures = Actors | Ovals = Use Cases | Rectangle = System Boundary | Lines = Associations
+   
